@@ -28,7 +28,8 @@ namespace CodingKataProject
 
         private string[] ExtractStringArrayFromInput(string input)
         {
-            return input.Split(',');   
+            var AllowedDelimiter = new[]{'\n', ','};
+            return input.Split(AllowedDelimiter);
         }
     }
 }
