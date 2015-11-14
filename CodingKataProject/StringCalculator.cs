@@ -13,11 +13,12 @@ namespace CodingKataProject
             int sumOfNumbers = 0;
             if (string.IsNullOrEmpty(input))
                 return 0;
-            return ReturnSumIfInputNotEmpty(input, sumOfNumbers);
+            return ReturnSumIfInputNotEmpty(input);
         }
 
-        private static int ReturnSumIfInputNotEmpty(string input, int sum)
+        private static int ReturnSumIfInputNotEmpty(string input)
         {
+            int sum = 0;
             string[] inputs = input.Split(',');
             foreach (var number in inputs)
             {
