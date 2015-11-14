@@ -10,21 +10,25 @@ namespace CodingKataProject
 
         public int Add(string input)
         {
-            int sumOfNumbers = 0;
             if (string.IsNullOrEmpty(input))
                 return 0;
             return ReturnSumIfInputNotEmpty(input);
         }
 
-        private static int ReturnSumIfInputNotEmpty(string input)
+        private int ReturnSumIfInputNotEmpty(string input)
         {
             int sum = 0;
-            string[] inputs = input.Split(',');
+            string[] inputs = ExtractStringArrayFromInput(input);
             foreach (var number in inputs)
             {
                 sum += Convert.ToInt32(number);
             }
             return sum;
+        }
+
+        private string[] ExtractStringArrayFromInput(string input)
+        {
+            return input.Split(',');   
         }
     }
 }
